@@ -32,8 +32,8 @@ include("modal.php");
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="../dashboard.php">Home</a></li>
-                                <li class="breadcrumb-item active">Donation</li>
+                                <li class="breadcrumb-item"><a href="../dashboard/index.php">Home</a></li>
+                                <li class="breadcrumb-item active">Donors</li>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -53,7 +53,7 @@ include("modal.php");
                             <!-- List of staff(s) -->
                             <div class="card">
                                 <div class="card-header">
-                                    <h5 class="card-title">Donation details</h5>
+                                    <h5 class="card-title">List of Donors</h5>
 
                                     <div class="card-tools">
                                         <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -72,30 +72,23 @@ include("modal.php");
                                                         <th>Donor ID</th>
                                                         <th>Name</th>
                                                         <th>Gender</th>
-                                                        <th>Blood Group</th>
-                                                        <th>Volume (ML)</th>
-                                                        <th>Blood Condition</th>
-                                                        <th>Donation Date</th>
+                                                        <th>Age</th>
+                                                        <th>Date Created</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php
-                                                    $query = mysqli_query($conn, "SELECT * FROM `donors` WHERE `status` = 'Donated'") or die(mysqli_error($conn));
+                                                    $query = mysqli_query($conn, "SELECT * FROM `donors` WHERE status = 'Donated'") or die(mysqli_error($conn));
                                                     $count = 1;
                                                     while ($row = mysqli_fetch_array($query)) {
                                                         $date = $row["created_at"];
                                                         $created_at = date('F j, Y, g:i a', strtotime($date));
-                                                        $donation_date = $row["donation_date"];
-                                                        $donated_at = date('F j, Y, g:i a', strtotime($donation_date));
                                                         $donor_id = $row["donor_id"];
                                                         $firstname = $row["firstname"];
                                                         $lastname = $row["lastname"];
                                                         $gender = $row["gender"];
-                                                        $blood_group = $row["blood_group"];
-                                                        $volume = $row["volume"];
-                                                        $status = $row["status"];
-                                                        $blood_status = $row["blood_status"];
+                                                        $age = $row["age"];
                                                     ?>
                                                         <tr>
                                                             <td><?php echo $count++; ?></td>
@@ -104,44 +97,14 @@ include("modal.php");
                                                                 <?php echo $firstname . '&nbsp;' . $lastname; ?>
                                                             </td>
                                                             <td><?php echo $gender; ?></td>
-                                                            <td><?php echo $blood_group; ?></td>
-                                                            <td><?php echo $volume; ?>&nbsp;ml</td>
-                                                            <?php
-                                                            if ($blood_status == "Good") {
-                                                            ?>
-                                                                <td>
-                                                                    <span class="badge badge-success">
-                                                                        <i class="fas fa-thumbs-up"></i>
-                                                                        Good
-                                                                    </span>
-                                                                </td>
-                                                            <?php
-                                                            } elseif ($blood_status == "Bad") {
-                                                            ?>
-                                                                <td>
-                                                                    <span class="badge badge-danger">
-                                                                        <i class="fas fa-thumbs-down"></i>
-                                                                        Bad
-                                                                    </span>
-                                                                </td>
-                                                            <?php
-
-                                                            } else {
-                                                            ?>
-                                                                <td class="bg badge-success"><?php echo "Not yet tested"; ?></td>
-                                                            <?php
-
-                                                            }
-                                                            ?>
-
-                                                            <td><?php echo $donation_date; ?></td>
+                                                            <td><?php echo $age; ?></td>
+                                                            <td><?php echo $created_at; ?></td>
                                                             <td>
                                                                 <a href="#view<?php echo $row['id']; ?>" data-bs-toggle="modal" data-bs-target="#view<?php echo $row['id']; ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
-                                                                <!-- 
                                                                 ||
                                                                 <a href="#edit<?php echo $row['id']; ?>" data-bs-toggle="modal" data-bs-target="#edit<?php echo $row['id']; ?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                                                                || -->
-                                                                <!-- <a href="#edit<?php echo $row['id']; ?>" data-bs-toggle="modal" data-bs-target="#del<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a> -->
+                                                                ||
+                                                                <a href="#edit<?php echo $row['id']; ?>" data-bs-toggle="modal" data-bs-target="#del<?php echo $row['id']; ?>" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                                                 <?php include('modal.php'); ?>
                                                             </td>
                                                         </tr>

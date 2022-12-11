@@ -91,24 +91,10 @@
                             <p>Blood Donation</p>
                         </a>
                     </li>
-                    <!-- Donors -->
-                    <li class="nav-item">
-                        <a href="../donors/" class="nav-link active">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>Donors</p>
-                        </a>
-                    </li>
-                    <!-- Blood groups -->
-                    <li class="nav-item">
-                        <a href="../group/" class="nav-link">
-                            <i class="nav-icon fa-solid fa-droplet"></i>
-                            <p>Blood Groups</p>
-                        </a>
-                    </li>
                     <!-- Blood status -->
                     <li class="nav-item">
-                        <a href="">
-                            <i></i>
+                        <a href="../status/" class="nav-link active">
+                            <i class="nav-icon fas fa-droplet"></i>
                             <p>Blood Status</p>
                         </a>
                     </li>

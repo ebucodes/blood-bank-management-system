@@ -18,55 +18,137 @@
             </div>
         </div>
 
-        <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
+        <?php
+        if ($role == 'Admin' || $role == 'Manager') {
+        ?>
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                <li class="nav-item">
-                    <a href="../dashboard.php" class="nav-link">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <!-- Blood Donation -->
-                <li class="nav-item">
-                    <a href="../donation/" class="nav-link">
-                        <i class="nav-icon fas fa-heartbeat"></i>
-                        <p>Blood Donation</p>
-                    </a>
-                </li>
-                <!-- Donors -->
-                <li class="nav-item">
-                    <a href="../donors/" class="nav-link">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Donors</p>
-                    </a>
-                </li>
-                <!-- Blood groups -->
-                <li class="nav-item">
-                    <a href="../blood_group/" class="nav-link">
-                        <i class="nav-icon fa-solid fa-droplet"></i>
-                        <p>Blood Groups</p>
-                    </a>
-                </li>
-                <!-- Blood banks -->
-                <li class="nav-item">
-                    <a href="../banks/" class="nav-link">
-                        <i class="nav-icon fas fa-bank"></i>
-                        <p>Blood Banks</p>
-                    </a>
-                </li>
-                <!-- Staffs -->
-                <li class="nav-item">
-                    <a href="../staff/" class="nav-link active">
-                        <i class="nav-icon fas fa-users"></i>
-                        <p>Staffs</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
+                    <li class="nav-item">
+                        <a href="../dashboard.php" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <!-- Blood Donation -->
+                    <li class="nav-item">
+                        <a href="../donation/" class="nav-link">
+                            <i class="nav-icon fas fa-heartbeat"></i>
+                            <p>Blood Donation</p>
+                        </a>
+                    </li>
+                    <!-- Donors -->
+                    <li class="nav-item">
+                        <a href="../donors/" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Donors</p>
+                        </a>
+                    </li>
+                    <!-- Blood groups -->
+                    <li class="nav-item">
+                        <a href="../group/" class="nav-link">
+                            <i class="nav-icon fa-solid fa-droplet"></i>
+                            <p>Blood Groups</p>
+                        </a>
+                    </li>
+                    <!-- Blood banks -->
+                    <li class="nav-item">
+                        <a href="../banks/" class="nav-link">
+                            <i class="nav-icon fas fa-bank"></i>
+                            <p>Blood Banks</p>
+                        </a>
+                    </li>
+                    <!-- Staffs -->
+                    <li class="nav-item">
+                        <a href="../staff/" class="nav-link active">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Staffs</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        <?
+        } elseif ($role == 'Scientist') {
+        ?>
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="../dashboard.php" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <!-- Blood Donation -->
+                    <li class="nav-item">
+                        <a href="../donation/" class="nav-link">
+                            <i class="nav-icon fas fa-heartbeat"></i>
+                            <p>Blood Donation</p>
+                        </a>
+                    </li>
+                    <!-- Donors -->
+                    <li class="nav-item">
+                        <a href="../donors/" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Donors</p>
+                        </a>
+                    </li>
+                    <!-- Blood groups -->
+                    <li class="nav-item">
+                        <a href="../group/" class="nav-link">
+                            <i class="nav-icon fa-solid fa-droplet"></i>
+                            <p>Blood Groups</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        <?php
+        } else {
+        ?>
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="../dashboard.php" class="nav-link">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <!-- Blood Donation -->
+                    <li class="nav-item">
+                        <a href="../donation/" class="nav-link">
+                            <i class="nav-icon fas fa-heartbeat"></i>
+                            <p>Blood Donation</p>
+                        </a>
+                    </li>
+                    <!-- Donors -->
+                    <li class="nav-item">
+                        <a href="../donors/" class="nav-link">
+                            <i class="nav-icon fas fa-users"></i>
+                            <p>Donors</p>
+                        </a>
+                    </li>
+                    <!-- Blood groups -->
+                    <li class="nav-item">
+                        <a href="../group/" class="nav-link">
+                            <i class="nav-icon fa-solid fa-droplet"></i>
+                            <p>Blood Groups</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        <?php
+        }
+        ?>
     </div>
     <!-- /.sidebar -->
 </aside>

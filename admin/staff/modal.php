@@ -35,6 +35,7 @@
                             <option disabled>Select Laundry Category</option>
                             <option value="Admin">Admin</option>
                             <option value="Manager">Manager</option>
+                            <option value="Scientist">Scientist</option>
                             <option value="Staff">Staff</option>
                         </select>
                     </div>
