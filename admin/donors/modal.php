@@ -90,41 +90,22 @@
                 ?>
                 <div class="container-fluid">
                     <form action="edit.php?id=<?php echo $editRow['id']; ?>" method="POST">
-                        <!-- Weight -->
-                        <div class="form-group">
-                            <?php
-                            if ($weight == '0') {
-                            ?>
+
+                        <?php
+                        if ($status == 'Pending') {
+                        ?>
+                            <!-- Weight -->
+                            <div class="form-group">
                                 <label> Enter Weight </label>
                                 <input type="number" name="weight" value="<?php echo $editRow['weight']; ?>" class="form-control" required>
-                            <?php
-                            } else {
-                            ?>
-                                <input type="hidden" name="weight" value="<?php echo $editRow['weight']; ?>" class="form-control" required>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                        <!-- Volume -->
-                        <div class="form-group">
-                            <?php
-                            if ($volume == '0') {
-                            ?>
+                            </div>
+                            <!-- Volume -->
+                            <div class="form-group">
                                 <label> Enter Volume </label>
                                 <input type="number" name="volume" value="<?php echo $editRow['volume']; ?>" class="form-control" required>
-                            <?php
-                            } else {
-                            ?>
-                                <input type="hidden" name="volume" value="<?php echo $editRow['volume']; ?>" class="form-control" required>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                        <!-- Method of ID -->
-                        <div class="form-group">
-                            <?php
-                            if ($identification_type == 'Pending') {
-                            ?>
+                            </div>
+                            <!-- Method of ID -->
+                            <div class="form-group">
                                 <label> Enter method of verification </label>
                                 <select class="form-select select2" name="identification_type" data-dropdown-css-class="select2-purple" style="width: 100%;" data-placeholder="What's your Gender?" aria-label=".form-select-sm example" required>
                                     <option disabled>Identification type?</option>
@@ -133,17 +114,7 @@
                                     <option value="Voter's Card">Voter's Card</option>
                                     <option value="International Passport">International Passport</option>
                                 </select>
-                            <?php
-                            } else {
-                            ?>
-                                <input type="hidden" name="identification_type" value="<?php echo $editRow['identification_type']; ?>" class=" form-control" required>
-                            <?php
-                            }
-                            ?>
-                        </div>
-                        <?php
-                        if ($status == 'Pending') {
-                        ?>
+                            </div>
                             <div class="form-group">
                                 <label> Update Donation Status </label>
                                 <select class="form-select select2" name="status" data-dropdown-css-class="select2-purple" style="width: 100%;" data-placeholder="What's your Gender?" aria-label=".form-select-sm example">
@@ -156,10 +127,10 @@
                                 <label> Date of donation</label>
                                 <input type="date" name="donation_date" value="<?php echo $editRow['donation_date']; ?>" class="form-control" required>
                             </div>
+
                         <?php
                         } else {
                         ?>
-                            <label> Donation status </label>
                             <input type="text" name="status" value="<?php echo $editRow['status']; ?>" class="form-control" required readonly>
                         <?php
                         }

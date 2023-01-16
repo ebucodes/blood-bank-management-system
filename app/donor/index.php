@@ -305,7 +305,9 @@ if (isset($_POST["submit"])) {
                             </div>
                             <div class="card-footer">
                                 <button name="submit" class="btn btn-primary" type="submit">Register</button>
-                                <a href="../../index.html" class="btn btn-danger" tooltip="Go back to homepage" role="button">Back</a>
+                                <hr>
+                                <a href="../../index.html" class="btn btn-link" tooltip="Go back to homepage" role="button">Go back to homepage</a>
+                                <a href="/request_form.php">Request for Blood</a>
                             </div>
                         </form>
                         <!-- /.card -->

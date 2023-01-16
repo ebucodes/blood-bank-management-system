@@ -67,6 +67,13 @@
                             <p>Staffs</p>
                         </a>
                     </li>
+                    <!--  -->
+                    <li class="nav-item">
+                        <a href="../admin/requests/" class="nav-link">
+                            <i class="nav-icon fas fa-user-clock"></i>
+                            <p>Blood Requests</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

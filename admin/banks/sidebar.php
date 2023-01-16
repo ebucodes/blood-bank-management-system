@@ -66,6 +66,13 @@
                             <p>Staffs</p>
                         </a>
                     </li>
+                    <!-- Blood groups -->
+                    <li class="nav-item">
+                        <a href="../requests/" class="nav-link">
+                            <i class="nav-icon fa-solid fa-user-clock"></i>
+                            <p>Blood Requests</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -104,6 +111,13 @@
                             <p>Blood Groups</p>
                         </a>
                     </li>
+                    <!-- Blood groups -->
+                    <li class="nav-item">
+                        <a href="../requests/" class="nav-link">
+                            <i class="nav-icon fa-solid fa-user-clock"></i>
+                            <p>Blood Requests</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -140,6 +154,13 @@
                         <a href="../group/" class="nav-link">
                             <i class="nav-icon fa-solid fa-droplet"></i>
                             <p>Blood Groups</p>
+                        </a>
+                    </li>
+                    <!-- Blood groups -->
+                    <li class="nav-item">
+                        <a href="../requests/" class="nav-link">
+                            <i class="nav-icon fa-solid fa-user-clock"></i>
+                            <p>Blood Requests</p>
                         </a>
                     </li>
                 </ul>
